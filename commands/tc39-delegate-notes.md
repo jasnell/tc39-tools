@@ -21,7 +21,7 @@ Use the `tc39_lookup_delegate` MCP tool to resolve the input to a full name and 
 - If **multiple matches** are found, list them and ask the user to pick one.
 - If **exactly one match** is found, proceed with that delegate.
 
-Record the resolved **full name** and **TLA** for use in the search steps.
+Record the resolved **full name** and **TLA** for use in the search steps. Throughout all output, always display delegate names in the canonical format: `Full Name (TLA)` — for example, "Kevin Gibbons (KG)".
 
 ## Step 2: Search for presentations
 
@@ -41,7 +41,7 @@ Organize the combined results into a summary grouped by proposal or topic.
 
 ### Delegate Profile
 
-Show the delegate's full name and TLA at the top.
+Show the delegate in canonical format at the top: `Full Name (TLA)`.
 
 ### Presentations
 
@@ -58,7 +58,7 @@ For each, include the conclusion if available.
 List proposals/topics where this delegate participated in discussion (but was not the presenter), sorted by date (most recent first). For each, summarize:
 
 - The proposal/topic being discussed
-- The delegate's apparent position or key points (extracted from the excerpt where their TLA appears)
+- The delegate's apparent position or key points (extracted from the excerpt where their TLA appears). When referencing other delegates from the discussion, resolve their TLAs using `tc39_lookup_delegate` and display in `Full Name (TLA)` format.
 - The meeting date
 
 ### Summary

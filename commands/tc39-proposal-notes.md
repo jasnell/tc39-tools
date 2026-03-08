@@ -34,7 +34,7 @@ If the proposal was discussed across multiple days within the same meeting, incl
 
 - **Meeting**: month and year (e.g., "February 2025")
 - **Date(s)**: specific day(s) discussed
-- **Presenter**: who presented
+- **Presenter**: displayed in `Full Name (TLA)` format (e.g., "James M Snell (JSL)"). Resolve via `tc39_lookup_delegate` if the notes only show a name or TLA.
 - **Stage at time of discussion**: if identifiable from the heading or body
 
 ### Presentation Summary
@@ -48,9 +48,11 @@ Summarize what the presenter covered:
 ### Committee Discussion
 
 Summarize the discussion that followed. For each significant point:
-- **Who** raised it (use full name, resolve TLA via `tc39_lookup_delegate` if needed)
+- **Who** raised it — always display as `Full Name (TLA)` (e.g., "Kevin Gibbons (KG)"). Resolve TLAs from the transcript via `tc39_lookup_delegate`.
 - **What** they said or asked — their position, concern, question, or support
 - **How it was addressed** — if the presenter or others responded
+
+**Important**: All delegate names throughout the output must use the canonical `Full Name (TLA)` format. Never display bare TLAs or names without the corresponding TLA.
 
 Group related exchanges together rather than listing them chronologically. Focus on:
 - **Support signals**: Who expressed support and for what aspects
