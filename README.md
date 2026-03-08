@@ -30,6 +30,8 @@ Slash commands invoked with `/tc39-<name>` in the chat interface.
 | `/tc39-add-to-agenda [stage]` | Add the current proposal to the next meeting agenda via PR to `tc39/agendas` |
 | `/tc39-update-agenda` | Update an existing agenda entry (slides link, timebox, etc.) via PR |
 | `/tc39-add-schedule-constraint` | Add a schedule constraint to the meeting agenda via PR |
+| `/tc39-delegate-notes <name\|TLA>` | Look up a TC39 delegate and summarize their recent meeting activity |
+| `/tc39-proposal-notes [name]` | Summarize the most recent TC39 plenary discussion for a proposal |
 
 ### Skills
 
@@ -44,7 +46,7 @@ Skills are loaded automatically when relevant context is detected.
 
 ### TC39 Spec MCP Server (recommended)
 
-Several commands use MCP tools (`tc39_search_spec`, `tc39_get_spec_section`, `tc39_list_proposals`, `tc39_get_proposal`, `tc39_search_notes`, `tc39_search_test262`) to look up ECMA-262 spec sections, search meeting notes, browse test262 tests, and fetch TC39 proposals. These are provided by the TC39 Spec MCP server:
+Several commands use MCP tools (`tc39_search_spec`, `tc39_get_spec_section`, `tc39_list_proposals`, `tc39_get_proposal`, `tc39_search_notes`, `tc39_search_test262`, `tc39_get_agenda`, `tc39_lookup_delegate`) to look up ECMA-262 spec sections, search meeting notes, browse test262 tests, fetch TC39 proposals, view meeting agendas, and resolve delegate names. These are provided by the TC39 Spec MCP server:
 
 **Server URL**: `https://tc39-spec-mcp.jasnell.workers.dev/mcp`
 
@@ -157,7 +159,7 @@ The commands were authored in OpenCode format. Most features work identically in
 | `subtask: true` | Runs as subtask | Ignored | Use `context: fork` in Claude; see below |
 | `description:` | Shown in TUI | Shown in menu | Identical |
 
-**For Claude Code users**: commands with `subtask: true` in the frontmatter (`tc39-review-spec`, `tc39-stage-advance`, `tc39-compare-api`, `tc39-check-tests`, `tc39-open-issues`, `tc39-cross-proposal`, `tc39-research`) are intended to run in isolation. To get the same behavior in Claude Code, change `subtask: true` to `context: fork` in the frontmatter of those files after copying.
+**For Claude Code users**: commands with `subtask: true` in the frontmatter (`tc39-review-spec`, `tc39-stage-advance`, `tc39-compare-api`, `tc39-check-tests`, `tc39-open-issues`, `tc39-cross-proposal`, `tc39-research`, `tc39-delegate-notes`, `tc39-proposal-notes`) are intended to run in isolation. To get the same behavior in Claude Code, change `subtask: true` to `context: fork` in the frontmatter of those files after copying.
 
 ## Typical workflow
 
@@ -181,6 +183,8 @@ The commands were authored in OpenCode format. Most features work identically in
 16. /tc39-add-to-agenda          # add proposal to next meeting agenda via PR
 17. /tc39-view-agenda            # review the full meeting agenda
 18. /tc39-add-schedule-constraint # add your schedule constraints via PR
+19. /tc39-proposal-notes         # review recent plenary discussion of your proposal
+20. /tc39-delegate-notes KG      # look up a delegate's recent positions and activity
 ```
 
 The `tc39-sync-tests` skill activates automatically after step 1 whenever `TEST_CASES.md` exists, keeping test case descriptions in sync with spec changes.
