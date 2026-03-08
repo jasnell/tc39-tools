@@ -5,6 +5,10 @@ subtask: true
 
 Research how a given concept or API pattern is handled across programming languages, platforms, and the JavaScript ecosystem. Produces a structured prior art survey suitable for inclusion in a TC39 proposal README.
 
+Information gathered must be verified to be accurate and up-to-date.
+
+If information is missing or unclear, ask the user for clarification or additional details.
+
 ## Step 0: Determine the research topic
 
 The argument is: `$ARGUMENTS`
